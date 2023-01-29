@@ -2,9 +2,9 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.purple {
-    color:crimson;
-    font-size:larger;
+.blue {
+    color:dodgerblue;
+    font-size:x-large;
 }
 
 .mainContainer p {
@@ -17,5 +17,5 @@
 }
 
 .selected {
-    color: cornflowerblue;
+    color: red;
 }

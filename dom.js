@@ -23,28 +23,36 @@ const cards = document.getElementsByClassName("card");
 // }
 
 const todoList = [
-  "finish research article",
-  "make revit plugin",
-  "create browser based ifc game",
+  "i turn blue when i am touched",
+  "keep far from me the pain of the blue hover",
+  "watch me blue myself",
 ];
 
 const container = document.querySelector(".mainContainer");
 
 const buttonsArray = [];
+let temporaryTextHolderHover = "";
+let temporaryTextHolderClick = "";
 
 for (let task of todoList) {
   const text = document.createElement("p");
   
 
   text.addEventListener("mouseenter", (event) => {
-    text.classList.add("purple")
+    text.classList.add("blue")
+    temporaryTextHolderHover = text.textContent;
+    text.textContent = ("aargh dont click me")
   })
 
   text.addEventListener("mouseleave", (event) => {
-    text.classList.remove("purple")
+    text.classList.remove("blue")
+    text.classList.remove("selected")
+    text.textContent = (temporaryTextHolderHover)
   })
 
   text.addEventListener("mousedown", (event) => {
+    temporaryTextHolderClick = text.textContent;
+    text.textContent = ("blaaaargh")
     buttonsArray.forEach(button => button.classList.remove("selected"))
     console.log(`selected task ${task}`)
     text.classList.add("selected")
